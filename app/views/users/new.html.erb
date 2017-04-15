@@ -1,43 +1,47 @@
-<h1>Sign Up</h1>
+  <div class="row">
+    <div class="col-xs-offset-4 col-xs-4">
+      <h1 align="center">Sign Up</h1>
 
-<%= form_for @user do |f| %>
-    <% if @user.errors.any? %>
-        <div class="error_messages">
-          <h2>Form is invalid</h2>
-          <ul>
-            <% for message in @user.errors.full_messages %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
+      <%= form_for @user do |f| %>
+        <% if @user.errors.any? %>
+          <div class="error_messages">
+            <h2>Form is invalid</h2>
+            <ul>
+              <% for message in @user.errors.full_messages %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+            <%= f.text_field :first_name , class: 'form-control', placeholder: 'First Name' %>
         </div>
-    <% end %>
-    <p>
-      <%= f.label :first_name %><br />
-      <%= f.text_field :first_name %>
-    </p>
-    <p>
-      <%= f.label :last_name %><br />
-      <%= f.text_field :last_name %>
-    </p>
-    <p>
-      <%= f.label :birthday %><br />
-      <%= f.text_field :birthday %>
-    </p>
-    <p>
-      <%= f.label :username %><br />
-      <%= f.text_field :username %>
-    </p>
-    <p>
-      <%= f.label :email %><br />
-      <%= f.text_field :email %>
-    </p>
-    <p>
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-    </p>
-    <p>
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %>
-    </p>
-    <p class="button"><%= f.submit %></p>
-<% end %>
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+          <%= f.text_field :last_name, class: 'form-control', placeholder: 'Last Name' %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+          <%= f.text_field :birthday, class: 'form-control', placeholder: 'Birthday' %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-font" aria-hidden="true"></span></span>
+          <%= f.text_field :username, class: 'form-control', placeholder: 'Username' %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+          <%= f.text_field :email, class: 'form-control', placeholder: 'E-mail' %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+          <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+          <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation' %>
+        </div>
+        <p><%= f.button 'Create user' , class: 'btn btn-primary btn-block'%></p>
+      <% end %>
+    </div>
+  </div>
