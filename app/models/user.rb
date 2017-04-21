@@ -37,20 +37,6 @@ end
 #
 # Table name: users
 #
-#  id         :integer(4)      not null, primary key
-#  first_name :string(255)
-#  last_name  :string(255)
-#  username   :string(255)
-#  password   :string(255)
-#  email      :string(255)
-#  birthday   :datetime
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#
-# == Schema Information
-#
-# Table name: users
-#
 #  id            :integer(4)      not null, primary key
 #  first_name    :string(255)
 #  last_name     :string(255)

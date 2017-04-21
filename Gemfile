@@ -17,4 +17,5 @@ group :development, :test do
   gem 'annotate', '~> 2.4.1.beta1'
   gem 'rubocop', '~> 0.48.0'
   gem 'test-unit', '~> 3.0'
+  gem 'pry'
 end

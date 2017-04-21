@@ -1,0 +1,30 @@
+<body align="center">
+<h1>Listing posts</h1>
+
+<table align="center" class="table">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Published at</th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Destroy</th>
+  </tr>
+  </thead>
+
+<% @posts.each do |post| %>
+  <tr>
+    <th scope="row"><%= post.title %></th>
+    <th><%= post.body %></th>
+    <th><%= post.published_at %></th>
+    <th><%= link_to 'Show', post, class: 'btn btn-success'  %></th>
+    <th><%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning' %></th>
+    <th><%= link_to 'Destroy', post, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></th>
+  </tr>
+<% end %>
+</table>
+
+<br />
+  <%= link_to 'New Post', new_post_path, class: 'btn btn-info' %>
+</body>
